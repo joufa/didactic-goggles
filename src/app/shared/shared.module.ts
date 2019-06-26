@@ -48,7 +48,8 @@ import {
   faLightbulb,
   faWindowMaximize,
   faStream,
-  faBook
+  faBook,
+  faBeer
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -74,7 +75,8 @@ library.add(
   faLightbulb,
   faWindowMaximize,
   faStream,
-  faBook
+  faBook,
+  faBeer
 );
 
 @NgModule({
