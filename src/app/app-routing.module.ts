@@ -6,19 +6,17 @@ const routes: Routes = [
     path: '',
     redirectTo: 'answer',
     pathMatch: 'full'
-},
+  },
   {
     path: 'answer',
     loadChildren: () =>
-    import('./features/answer/answer.module').then(m => m.AnswerModule)
-},
-{
-  path: 'admin',
-  loadChildren: () =>
-  import('./features/admin/admin.module').then(m => m.AdminModule)
-},
-
-  
+      import('./features/answer/answer.module').then(m => m.AnswerModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./features/admin/admin.module').then(m => m.AdminModule)
+  }
 ];
 
 @NgModule({

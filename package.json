@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format:write": "prettier '{src,e2e}/**/*.{ts,json,md,scss}' --write",
+    "format:write-win": "prettier \"{src,e2e}/**/*.{ts,json,md,scss}\" --write",
     "format:test": "prettier '{src,e2e}/**/*.{ts,json,md,scss}' --list-different"
   },
   "private": true,
