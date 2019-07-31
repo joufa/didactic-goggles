@@ -5,9 +5,23 @@
                   </div>
         </div>
         <div class="row">
+                <div class="col-md-12">
+                        <h2>Subheading</h2>
+                  </div>
+        </div>
+        <div class="row" *ngFor="let question of mockQuestions">
             <div class="col-md-12">
-                <agf-question></agf-question>
+                        <agf-question [data]="question" (userValue)="handleValue($event)"></agf-question>
             </div>
         </div>
+        <div class="row" id="actions">
+            
+            <div class="col-md-6">
+                <button mat-button (click)="answer()">
+                    Lähetä
+                </button>
+            </div>
+        </div>
+
     </div>
     

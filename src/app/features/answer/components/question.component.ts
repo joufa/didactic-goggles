@@ -1,4 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import { QuestionData } from '../answer.model';
 
 @Component({
   selector: 'agf-question',
@@ -7,6 +15,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuestionComponent implements OnInit {
+  @Input()
+  data: QuestionData;
+
+  @Output()
+  userValue = new EventEmitter<QuestionData>();
+
   autoTicks = false;
   disabled = false;
   invert = false;
@@ -17,9 +31,16 @@ export class QuestionComponent implements OnInit {
   thumbLabel = true;
   value = 1;
   vertical = false;
-  constructor() { }
+  tickInterval = 1;
+  constructor() {}
 
   ngOnInit() {
+    this.userValue.emit({ title: this.data.title, value: this.value });
   }
-
+  get title() {
+    return this.data.title;
+  }
+  handleChange(event: any) {
+    this.userValue.emit({ title: this.data.title, value: event.value });
+  }
 }

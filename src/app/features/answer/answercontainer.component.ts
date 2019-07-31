@@ -24,6 +24,6 @@ export class AnswercontainerComponent implements OnInit {
     });
   }
   goToSurvey() {
-    this.router.navigate(['/answer/survey/id/team/id']);
+    this.router.navigate(['/answer/survey/2/team/1']);
   }
 }

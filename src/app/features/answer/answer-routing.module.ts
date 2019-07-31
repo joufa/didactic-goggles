@@ -9,7 +9,7 @@ const routes: Routes = [
     component: AnswercontainerComponent
   },
   {
-    path: 'survey/id/team/id',
+    path: 'survey/:surveyId/team/:teamId',
     component: SurveyComponent
   }
 ];
