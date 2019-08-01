@@ -8,9 +8,17 @@ import { FEATURE_NAME, reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { TeamEffects } from './effects/team.effects';
 import { TeamListComponent } from './components/team-list.component';
-
+import { TeamsContainerComponent } from './containers/teams-container.component';
+import { EditTeamComponent } from './components/edit-team/edit-team.component';
+import { EditTeamContainerComponent } from './containers/edit-team.container';
 @NgModule({
-  declarations: [AdmincontainerComponent, TeamListComponent],
+  declarations: [
+    AdmincontainerComponent,
+    TeamListComponent,
+    TeamsContainerComponent,
+    EditTeamComponent,
+    EditTeamContainerComponent
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,

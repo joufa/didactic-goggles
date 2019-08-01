@@ -1,9 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Team } from './admin.model';
-import { Store, select } from '@ngrx/store';
-import * as fromTeams from './reducers';
-import { fetchTeams } from './actions/team.actions';
+import { Router } from '@angular/router';
 @Component({
   selector: 'agf-admincontainer',
   templateUrl: './admincontainer.component.html',
@@ -11,13 +7,30 @@ import { fetchTeams } from './actions/team.actions';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AdmincontainerComponent implements OnInit {
-  teams$: Observable<Team[]>;
-  teamsLoading$: Observable<boolean>;
-  constructor(private store: Store<fromTeams.State>) {}
+  title = 'Admin';
+  navLinks: any[];
+  activeLinkIndex = -1;
 
-  ngOnInit() {
-    this.teamsLoading$ = this.store.pipe(select(fromTeams.getTeamsLoading));
-    this.teams$ = this.store.pipe(select(fromTeams.getAllTeams));
-    this.store.dispatch(fetchTeams());
+  constructor(private router: Router) {
+    this.navLinks = [
+      {
+        label: 'Teams',
+        link: './teams',
+        index: 0
+      },
+      {
+        label: 'Surveys',
+        link: './admin/surveys',
+        index: 1
+      }
+    ];
+  }
+
+  ngOnInit(): void {
+    this.router.events.subscribe(res => {
+      this.activeLinkIndex = this.navLinks.indexOf(
+        this.navLinks.find(tab => tab.link === '.' + this.router.url)
+      );
+    });
   }
 }

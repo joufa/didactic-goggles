@@ -1,0 +1,11 @@
+<mat-card class="title-card">
+    <mat-card-content>
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Team name" value="">
+            </mat-form-field>
+        </form>
+        <button mat-button>Add</button>
+    </mat-card-content>
+</mat-card>
+<agf-team-list [loading]="teamsLoading$ | async" [error]="teamsError$ | async" [teams]="teams$ | async" (edit)="select($event)"></agf-team-list>

@@ -33,9 +33,25 @@ export const getSelectedTeamId = createSelector(
   fromTeams.getSelectedId
 );
 
+export const selectTeamEntities = createSelector(
+  selectTeamEntitiesState,
+  fromTeams.getTeamEntities
+);
+
+export const getSelectedTeam = createSelector(
+  selectTeamEntities,
+  getSelectedTeamId,
+  (entities, id) => entities[id]
+);
+
 export const getTeamsLoading = createSelector(
   selectTeamEntitiesState,
   fromTeams.getLoading
+);
+
+export const getTeamsError = createSelector(
+  selectTeamEntitiesState,
+  fromTeams.getError
 );
 
 export const {

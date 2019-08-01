@@ -8,4 +8,9 @@ export const fetchTeamsSuccess = createAction(
   props<{ teams: Team[] }>()
 );
 
+export const selectTeam = createAction(
+  '[Admin/Teams] Select a team',
+  props<{ team: string }>()
+);
+
 export const teamError = createAction('[Admin/Teams] Team error');

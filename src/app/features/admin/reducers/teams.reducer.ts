@@ -24,6 +24,9 @@ const reducer = createReducer(
   on(teamActions.fetchTeams, state => {
     return { ...state, loading: true };
   }),
+  on(teamActions.selectTeam, (state, { team }) => {
+    return { ...state, selectedTeamId: team };
+  }),
   on(teamActions.fetchTeamsSuccess, (state, { teams }) => {
     return adapter.addMany(teams, {
       ...state,
@@ -43,3 +46,5 @@ export function teamReducer(state: State | undefined, action: Action) {
 
 export const getSelectedId = (state: State) => state.selectedTeamId;
 export const getLoading = (state: State) => state.loading;
+export const getError = (state: State) => state.error;
+export const getTeamEntities = (state: State) => state.entities;

@@ -23,6 +23,7 @@ import { MatSliderModule } from '@angular/material/';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatTableModule } from '@angular/material/table';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -103,6 +104,7 @@ library.add(
     MatSlideToggleModule,
     MatDividerModule,
     MatStepperModule,
+    MatTableModule,
 
     FontAwesomeModule
   ],
@@ -133,6 +135,7 @@ library.add(
     MatDatepickerModule,
     MatNativeDateModule,
     MatStepperModule,
+    MatTableModule,
 
     FontAwesomeModule
   ]
