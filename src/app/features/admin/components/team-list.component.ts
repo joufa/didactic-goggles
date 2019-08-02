@@ -66,7 +66,8 @@ export class TeamListComponent {
     'name',
     'memberCount',
     'desc',
-    'createdAt'
+    'createdAt',
+    'updatedAt'
   ];
 
   editTeam(id: string) {

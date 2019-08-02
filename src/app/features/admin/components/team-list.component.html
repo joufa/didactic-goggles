@@ -29,7 +29,7 @@
 
         <ng-container matColumnDef="desc">
             <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.desc}} </mat-cell>
+            <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
             <td mat-footer-cell *matFooterCellDef></td>
         </ng-container>
 
@@ -38,6 +38,12 @@
             <mat-cell *matCellDef="let element"> {{element.createdAt}} </mat-cell>
             <td mat-footer-cell *matFooterCellDef></td>
         </ng-container>
+
+        <ng-container matColumnDef="updatedAt">
+                <mat-header-cell *matHeaderCellDef> Updated </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.updatedAt}} </mat-cell>
+                <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

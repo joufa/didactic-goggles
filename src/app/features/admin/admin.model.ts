@@ -3,6 +3,6 @@ export interface Team {
   name: string;
   memberCount?: number;
   description?: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }

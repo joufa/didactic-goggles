@@ -37,6 +37,12 @@ const reducer = createReducer(
   }),
   on(teamActions.teamError, state => {
     return { ...state, loading: false, error: true };
+  }),
+  on(teamActions.updateTeamSuccess, (state, { team }) => {
+    return adapter.updateOne(team, state);
+  }),
+  on(teamActions.addTeamSuccess, (state, { team }) => {
+    return adapter.addOne(team, state);
   })
 );
 
