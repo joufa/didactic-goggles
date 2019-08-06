@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdmincontainerComponent } from './admincontainer.component';
 import { TeamsContainerComponent } from './containers/teams-container.component';
-import { EditTeamComponent } from './components/edit-team/edit-team.component';
 import { EditTeamContainerComponent } from './containers/edit-team.container';
+import { SurveysContainerComponent } from './containers/surveys-container.component';
+import {EditSurveyContainerComponent} from './containers/surveys/edit-survey.container';
 const routes: Routes = [
   {
     path: '',
@@ -16,6 +17,14 @@ const routes: Routes = [
       {
         path: 'teams/edit',
         component: EditTeamContainerComponent
+      },
+      {
+        path: 'surveys',
+        component: SurveysContainerComponent
+      },
+      {
+        path: 'surveys/edit',
+        component: EditSurveyContainerComponent
       }
     ]
   }

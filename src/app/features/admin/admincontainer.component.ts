@@ -20,7 +20,7 @@ export class AdmincontainerComponent implements OnInit {
       },
       {
         label: 'Surveys',
-        link: './admin/surveys',
+        link: './surveys',
         index: 1
       }
     ];

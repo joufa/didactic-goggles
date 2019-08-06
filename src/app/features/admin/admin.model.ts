@@ -6,3 +6,10 @@ export interface Team {
   createdAt?: Date;
   updatedAt?: Date;
 }
+
+export interface Survey {
+  id: string,
+  name: string,
+  createdAt?: Date;
+  updatedAt?: Date;
+}
