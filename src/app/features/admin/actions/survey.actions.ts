@@ -25,7 +25,7 @@ export const addSurveySuccess = createAction(
 );
 
 export const updateSurvey = createAction(
-  '[Admin/Surveys] Update a team',
+  '[Admin/Surveys] Update a survey',
   props<{ survey: Survey }>()
 );
 

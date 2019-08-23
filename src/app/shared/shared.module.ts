@@ -24,6 +24,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTableModule } from '@angular/material/table';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -105,7 +106,7 @@ library.add(
     MatDividerModule,
     MatStepperModule,
     MatTableModule,
-
+    DragDropModule,
     FontAwesomeModule
   ],
   declarations: [],
@@ -136,7 +137,7 @@ library.add(
     MatNativeDateModule,
     MatStepperModule,
     MatTableModule,
-
+    DragDropModule,
     FontAwesomeModule
   ]
 })

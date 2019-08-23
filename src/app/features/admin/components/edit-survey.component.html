@@ -1,0 +1,50 @@
+<mat-card><h1>{{surveyName}}</h1></mat-card>
+<mat-card>
+    <mat-slide-toggle>Open</mat-slide-toggle>
+</mat-card>
+<mat-card>
+    <mat-card-header><h2>Teams</h2>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Add new team">
+            <fa-icon icon="plus">add</fa-icon>
+          </button>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-chip-list  *ngIf="teams" aria-label="Team selection">
+            <mat-chip *ngFor="let team of surveyTeams" [removable]="true" (removed)="remove(team)">{{team.name}} <fa-icon icon="trash" matChipRemove *ngIf="true">cancel</fa-icon></mat-chip>
+          </mat-chip-list>
+          
+    </mat-card-content>
+</mat-card>
+<mat-card> 
+    <mat-card-header><h2>QuestionSets</h2>
+        <button mat-icon-button [matMenuTriggerFor]="addQs" aria-label="Add new qs">
+                <fa-icon icon="plus">add</fa-icon>
+              </button>
+    </mat-card-header>
+    <mat-card-content>
+            
+    
+            <div cdkDropList (cdkDropListDropped)="drop($event)" class="example-list">
+                    <mat-card *ngFor="let testi of testArray" class="example-box" cdkDrag>
+                        {{testi}}
+                        </mat-card>    
+            </div>
+         
+    </mat-card-content>
+</mat-card>
+
+
+<mat-menu #menu="matMenu">
+  <button *ngFor="let team of availableTeams" mat-menu-item (click)="addTeam(team)">{{team.name}}</button>
+</mat-menu>
+
+<mat-menu #addQs="matMenu">
+
+        <form class="example-form" (click)="stopPropagation($event)" style="margin: 5px" [formGroup]="newQuestionSet">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Name" formControlName="name">
+                </mat-form-field>
+                <button mat-raised-button (click)="addQuestionSet()">Add</button>
+            </form>
+            
+</mat-menu>

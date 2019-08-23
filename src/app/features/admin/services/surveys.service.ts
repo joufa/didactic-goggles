@@ -24,4 +24,8 @@ export class SurveyService {
   addSurvey(survey: Survey): Observable<Survey> {
     return this.http.post<Survey>(`${this.API_PATH}`, survey, this.httpOptions);
   }
+
+  updateSurvey(survey: Survey): Observable<Survey> {
+    return this.http.put<Survey>(`${this.API_PATH}`, survey, this.httpOptions);
+  }
 }

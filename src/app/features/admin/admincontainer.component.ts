@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AdmincontainerComponent implements OnInit {
   title = 'Admin';
   navLinks: any[];
-  activeLinkIndex = -1;
+  activeLinkIndex = 0;
 
   constructor(private router: Router) {
     this.navLinks = [

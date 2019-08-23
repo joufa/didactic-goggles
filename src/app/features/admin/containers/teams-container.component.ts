@@ -33,7 +33,6 @@ export class TeamsContainerComponent implements OnInit {
     this.teamsLoading$ = this.store.pipe(select(fromTeams.getTeamsLoading));
     this.teams$ = this.store.pipe(select(fromTeams.getAllTeams));
     this.teamsError$ = this.store.pipe(select(fromTeams.getTeamsError));
-    this.store.dispatch(fetchTeams());
   }
 
   select(event: string) {

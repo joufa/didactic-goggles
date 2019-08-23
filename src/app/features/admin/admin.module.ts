@@ -14,9 +14,12 @@ import { EditTeamComponent } from './components/edit-team/edit-team.component';
 import { EditTeamContainerComponent } from './containers/edit-team.container';
 import { SurveysContainerComponent } from './containers/surveys-container.component';
 import { SurveyListComponent } from './components/survey-list.component';
-import {EditSurveyContainerComponent} from './containers/surveys/edit-survey.container';
+import { EditSurveyContainerComponent } from './containers/surveys/edit-survey.container';
+import { EditSurveyComponent } from './components/edit-survey.component';
+import { AdminSandboxContainerComponent } from './containers/admin.sandbox';
 @NgModule({
   declarations: [
+    AdminSandboxContainerComponent,
     AdmincontainerComponent,
     TeamListComponent,
     TeamsContainerComponent,
@@ -24,7 +27,8 @@ import {EditSurveyContainerComponent} from './containers/surveys/edit-survey.con
     EditTeamContainerComponent,
     SurveysContainerComponent,
     SurveyListComponent,
-    EditSurveyContainerComponent
+    EditSurveyContainerComponent,
+    EditSurveyComponent
   ],
   imports: [
     CommonModule,

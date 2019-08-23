@@ -4,11 +4,12 @@ import { AdmincontainerComponent } from './admincontainer.component';
 import { TeamsContainerComponent } from './containers/teams-container.component';
 import { EditTeamContainerComponent } from './containers/edit-team.container';
 import { SurveysContainerComponent } from './containers/surveys-container.component';
-import {EditSurveyContainerComponent} from './containers/surveys/edit-survey.container';
+import { EditSurveyContainerComponent } from './containers/surveys/edit-survey.container';
+import { AdminSandboxContainerComponent } from './containers/admin.sandbox';
 const routes: Routes = [
   {
     path: '',
-    component: AdmincontainerComponent,
+    component: AdminSandboxContainerComponent,
     children: [
       {
         path: 'teams',

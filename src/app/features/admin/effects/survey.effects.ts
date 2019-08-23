@@ -17,7 +17,30 @@ export class SurveyEffects {
       ofType(surveyActions.fetchSurveys),
       switchMap(() =>
         this.service.findSurveys().pipe(
-          map(surveys => surveyActions.fetchSurveysSuccess({ surveys: surveys })),
+          map(surveys =>
+            surveyActions.fetchSurveysSuccess({ surveys: surveys })
+          ),
+          catchError(() => of(surveyActions.surveyError()))
+        )
+      )
+    )
+  );
+
+  updateSurvey = createEffect(() =>
+    this.actions$.pipe(
+      ofType(surveyActions.updateSurvey),
+      switchMap((action: any) =>
+        this.service.updateSurvey(action.survey).pipe(
+          map(survey => {
+            const update: Update<Survey> = {
+              id: survey.id,
+              changes: {
+                name: survey.name,
+                teams: survey.teams
+              }
+            };
+            return surveyActions.updateSurveySuccess({ survey: update });
+          }),
           catchError(() => of(surveyActions.surveyError()))
         )
       )
